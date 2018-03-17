@@ -10,21 +10,32 @@
 npm install --save react-native-fade-in-up-view
 ```
 
-## Usage
+## Usage Example
 
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-native-fade-in-up-view'
+import FadeInUpView from 'react-native-fade-in-up-view'
 
 class Example extends Component {
   render () {
     return (
-      <MyComponent />
+      <FadeInUpView>
+        <MyOtherComponent />
+      </FadeInUpView>
     )
   }
 }
 ```
+
+## Properties
+
+The following are component specific properties of the FadeInUpView component
+<br />
+<ul>
+  <li><strong>duration</strong>: duration of animation</li>
+  <li><strong>position</strong>: starting position of compoennt relative to its current position on the y-axis</li>
+</ul>
 
 ## License
 

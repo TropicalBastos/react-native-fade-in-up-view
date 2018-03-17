@@ -1,26 +1,39 @@
-/**
- * @class ExampleComponent
- */
+import React, { Component } from 'react';
+import { View, Animated } from 'react-native';
 
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+export default class FadeInUpView extends Component{
 
-import styles from './styles.css'
+    constructor(props){
+        super(props);
+        this.duration = (props.duration) ? props.duration: 1000;
+        this.position = (props.position) ? props.position: 100;
+        this.state = {
+            opacity: new Animated.Value(0),
+            position: new Animated.Value(this.position)
+        }
+    }
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
+    componentDidMount(){
+        Animated.timing(this.state.opacity, {
+            toValue: 1,
+            duration: this.duration
+        }).start();
+        Animated.timing(this.state.position, {
+            toValue: 0,
+            duration: this.duration
+        }).start();
+    }
 
-  render() {
-    const {
-      text
-    } = this.props
+    render(){
+        return(
+            <Animated.View style={[
+                {opacity: this.state.opacity,
+                top: this.state.position},
+                this.props.style
+            ]}>
+                {this.props.children}
+            </Animated.View>
+        );
+    }
 
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
 }
