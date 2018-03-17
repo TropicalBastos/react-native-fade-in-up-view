@@ -1,0 +1,8 @@
+{
+  "short_name": "react-native-fade-in-up-view",
+  "name": "react-native-fade-in-up-view",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
