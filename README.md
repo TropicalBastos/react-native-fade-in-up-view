@@ -34,7 +34,7 @@ The following are component specific properties of the FadeInUpView component
 <br />
 <ul>
   <li><strong>duration</strong>: duration of animation</li>
-  <li><strong>position</strong>: starting position of compoennt relative to its current position on the y-axis</li>
+  <li><strong>position</strong>: starting position of component relative to its current position on the y-axis</li>
 </ul>
 
 ## License
